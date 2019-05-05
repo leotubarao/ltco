@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>LTCO</title>
+	<link rel="stylesheet" href="https://use.typekit.net/pvf7ihh.css">
+	<style type="text/css">
+		:root {
+			--blue: #1818E8;
+			--grey: #202027;
+			--white: #FAFAFA;
+		}
+
+		* {
+			padding: 0;
+			margin: 0;
+			font-family: ibm-plex-mono, monospace;
+			font-weight: 700;
+		}
+
+		body {
+			display: flex;
+			height: 100vh;
+			background-color: var(--grey);
+		}
+
+		@keyframes overlayPulse {
+
+			from,
+			to {}
+
+			50% {
+				opacity: 0;
+			}
+		}
+
+		.ltco {
+			margin: auto;
+			animation: overlayPulse 2s ease-in infinite;
+		}
+
+		.v0 .ltco::before {
+			content: 'ltco./>';
+			color: var(--blue);
+			padding: 0.7rem;
+			padding-top: 0.4rem;
+			line-height: 1;
+			font-weight: 900;
+		}
+
+		.v1 .ltco::before {
+			content: 'ltco./>';
+			color: #FFF;
+			padding: 0.7rem;
+			padding-top: 0.4rem;
+			line-height: 1;
+			background-color: var(--blue);
+		}
+
+		.v2 .ltco::before {
+			content: './>';
+			display: inline-block;
+			color: #FFF;
+			transform: rotate(90deg) translateX(-5px);
+			padding: 0.2rem 0.7rem 0.7rem 0.5rem;
+			line-height: 1;
+			background-color: var(--blue);
+			letter-spacing: -2px;
+			font-weight: 900;
+		}
+
+		.v2 .ltco::after {
+			margin-left: 0.3rem;
+			content: 'ltco';
+			display: inline-block;
+			color: var(--blue);
+			line-height: 1;
+		}
+	</style>
+</head>
+
+<body class="v1">
+	<h1 class="ltco"></h1>
+</body>
+
+</html>
