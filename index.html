@@ -3,15 +3,19 @@
 
 <head>
 	<meta charset="UTF-8">
+  <meta name="robots" content="index, follow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#1818E8">
 	<meta http-equiv="Content-Language" content="pt-br">
 	<meta name="author" content="LTCO">
-	<meta name="description" content="UI/UX Design | Full-Stack Develop">
+	<meta name="description" content="Full-Stack Developer | UI Designer">
 	<meta name="keywords"
-		content="HTML,CSS,JavaScript,WordPress,SASS,SCSS,Gulp,Grunt,NodeJS,VueJS,ReactJS,React Native,Design,UI,UX,Frontend,Backend">
+  content="HTML,CSS,JavaScript,WordPress,SASS,SCSS,Gulp,Grunt,NodeJS,VueJS,ReactJS,React Native,Design,UI,UX,Frontend,Backend">
 	<title>LTCO</title>
+  <link rel="canonical" href="https://ltco.com.br/">
+  <script data-ad-client="ca-pub-2660228248092459" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
 	<link rel="stylesheet" href="https://use.typekit.net/pvf7ihh.css">
 	<style type="text/css">
 		:root {
@@ -30,66 +34,83 @@
 		body {
 			display: flex;
 			height: 100vh;
-			background-color: var(--grey);
+			background-color: var(--white);
 		}
 
-		@keyframes overlayPulse {
-
-			from,
-			to {}
-
-			50% {
-				opacity: 0;
-			}
-		}
-
-		.ltco {
+		main {
 			margin: auto;
-			animation: overlayPulse 2s ease-in infinite;
+			display: flex;
+      flex-direction: column;
+      align-items: center;
 		}
 
-		.v0 .ltco::before {
-			content: 'ltco./>';
-			color: var(--blue);
-			padding: 0.7rem;
-			padding-top: 0.4rem;
-			line-height: 1;
-			font-weight: 900;
-		}
+    main > img {
+      box-shadow: 0 15px 26px -6px rgb(24, 24, 232, 0.45);
+    }
 
-		.v1 .ltco::before {
-			content: 'ltco./>';
-			color: #FFF;
-			padding: 0.7rem;
-			padding-top: 0.4rem;
-			line-height: 1;
-			background-color: var(--blue);
-		}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 120px;
+      margin-top: 2rem;
+    }
 
-		.v2 .ltco::before {
-			content: './>';
-			display: inline-block;
-			color: #FFF;
-			transform: rotate(90deg) translateX(-5px);
-			padding: 0.2rem 0.7rem 0.7rem 0.5rem;
-			line-height: 1;
-			background-color: var(--blue);
-			letter-spacing: -2px;
-			font-weight: 900;
-		}
+    a {
+      color: var(--grey);
+      text-decoration: none;
+      transition: transform 200ms ease-in-out;
+    }
 
-		.v2 .ltco::after {
-			margin-left: 0.3rem;
-			content: 'ltco';
-			display: inline-block;
-			color: var(--blue);
-			line-height: 1;
-		}
+    a:hover {
+      transform: scale(1.1);
+    }
+
+    .dark body {
+      background-color: var(--grey);
+    }
+
+    .dark body a {
+      color: var(--white);
+    }
 	</style>
 </head>
 
-<body class="v1">
-	<h1 class="ltco"></h1>
+<body>
+
+	<main>
+    <img src="assets/ltco.svg" width="160" alt="logo-ltco" />
+    <nav>
+      <a href="https://www.instagram.com/leotubaraomusic/" title="Instagram LeoTubarão">
+        <i data-feather="instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/ltco/" title="LinkedIn LeoTubarão">
+        <i data-feather="linkedin"></i>
+      </a>
+      <a href="https://github.com/leotubarao" title="GitHub LeoTubarão">
+        <i data-feather="github"></i>
+      </a>
+    </nav>
+
+  </main>
+
+  <script>
+    feather.replace({ 'stroke-width': 1.5 });
+
+    (function() {
+      var date = new Date();
+      var hr = date.getHours();
+      if (hr > 5 && hr < 19) {
+          document.querySelector('html').classList.remove('dark');
+      }
+      if (hr >= 19) {
+          document.querySelector('html').classList.add('dark');
+      }
+      if (hr >= 0 && hr <= 5) {
+          document.querySelector('html').classList.add('dark');
+      }
+     })();
+  </script>
 </body>
 
 </html>
